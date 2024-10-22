@@ -1,0 +1,113 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    background-color: #e9ecef;
+    color: #343a40;
+    position: relative;
+    height: auto; 
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.celda {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 48px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.celda:hover {
+    background-color: #e7f1ff;
+    transform: scale(1.05);
+}
+#mensaje {
+    display: none;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1; 
+}
+.ganador {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 24px;
+}
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    z-index: 1; 
+}
+input[type="text"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1; 
+}
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.95);
+}
+.particula {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: flotar 10s infinite;
+}
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-100px) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) rotate(720deg);
+    }
+}
